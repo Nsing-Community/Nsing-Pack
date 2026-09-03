@@ -1,0 +1,16 @@
+
+execUserFlashInit()
+{
+   __var v;
+   //读rease m4 bit 
+   v=__readMemory32(0x58030174, "AP0_Memory");
+   if(v!=0)
+   {
+    //如果M4是realse状态，需要halt M4
+    //halt M4
+    __message "N32H78x AP2 halt M4";
+    __writeMemory32(0xA05F0003,0xE000EDF0, "AP2_Memory");
+   }
+
+
+}

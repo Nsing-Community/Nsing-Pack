@@ -1,0 +1,170 @@
+<DataBase>
+  <!--             -->
+  <!-- Nsingtech -->
+  <!--             -->
+  
+  <!--         -->
+  <!-- N32G033 -->
+  <!--         -->
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32G033x8" Core="JLINK_CORE_CORTEX_M0" WorkRAMAddr="0x20000000" WorkRAMSize="0x00001800"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00010000" Loader="Devices/Nsingtech/N32G033_64.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+  <!--         -->
+  <!-- N32H49X -->
+  <!--         -->
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32H492xE" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00050000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32H49x_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32H492xG" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00050000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00100000" Loader="Devices/Nsingtech/N32H49x_1024.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32H493xE" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00050000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32H49x_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32H493xG" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00050000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00100000" Loader="Devices/Nsingtech/N32H49x_1024.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32H497xG" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00090000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00100000" Loader="Devices/Nsingtech/N32H49x_1024.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+  <!--         -->
+  <!-- N32MC47X -->
+  <!--         -->
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32MC471KC" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00040000" Loader="Devices/Nsingtech/N32MC47x_DP47x_256.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32MC471KE" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32MC47x_DP47x_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32MC471CC" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00040000" Loader="Devices/Nsingtech/N32MC47x_DP47x_256.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32MC471CE" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32MC47x_DP47x_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32MC471RC" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00040000" Loader="Devices/Nsingtech/N32MC47x_DP47x_256.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32MC471RE" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32MC47x_DP47x_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32MC471MC" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00040000" Loader="Devices/Nsingtech/N32MC47x_DP47x_256.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32MC471ME" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32MC47x_DP47x_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32MC471VC" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00040000" Loader="Devices/Nsingtech/N32MC47x_DP47x_256.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32MC471VE" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32MC47x_DP47x_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32MC471QC" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00040000" Loader="Devices/Nsingtech/N32MC47x_DP47x_256.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32MC471QE" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32MC47x_DP47x_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+  <!--         -->
+  <!-- N32DP47X -->
+  <!--         -->
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32DP474KC" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00040000" Loader="Devices/Nsingtech/N32MC47x_DP47x_256.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32DP474KE" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32MC47x_DP47x_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32DP474CC" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00040000" Loader="Devices/Nsingtech/N32MC47x_DP47x_256.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32DP474CE" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32MC47x_DP47x_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32DP474RC" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00040000" Loader="Devices/Nsingtech/N32MC47x_DP47x_256.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32DP474RE" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32MC47x_DP47x_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32DP474MC" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00040000" Loader="Devices/Nsingtech/N32MC47x_DP47x_256.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32DP474ME" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32MC47x_DP47x_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32DP474VC" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00040000" Loader="Devices/Nsingtech/N32MC47x_DP47x_256.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32DP474VE" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32MC47x_DP47x_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32DP474QC" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00040000" Loader="Devices/Nsingtech/N32MC47x_DP47x_256.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32DP474QE" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00020000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32MC47x_DP47x_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+  <!--         -->
+  <!-- N32G41xx -->
+  <!--         -->
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32G412x8" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00004000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00010000" Loader="Devices/Nsingtech/N32G41x_64.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32G412xB" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00006000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00020000" Loader="Devices/Nsingtech/N32G41x_128.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32G415x8" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00004000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00010000" Loader="Devices/Nsingtech/N32G41x_64.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32G415xB" Core="JLINK_CORE_CORTEX_M4" WorkRAMAddr="0x20000000" WorkRAMSize="0x00006000"/>
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x08000000" MaxSize="0x00020000" Loader="Devices/Nsingtech/N32G41x_128.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+
+<!--         -->
+<!-- N32WB033 -->
+<!--         -->
+
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32WB033KE" Core="JLINK_CORE_CORTEX_M0" WorkRAMAddr="0x20000000" WorkRAMSize="0x00010000" />
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x01000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32WB033_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+<Device>
+<ChipInfo Vendor="Nsingtech" Name="N32WB033CE" Core="JLINK_CORE_CORTEX_M0" WorkRAMAddr="0x20000000" WorkRAMSize="0x00010000" />
+<FlashBankInfo Name="Internal Flash" BaseAddr="0x01000000" MaxSize="0x00080000" Loader="Devices/Nsingtech/N32WB033_512.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1"/>
+</Device>
+</DataBase>

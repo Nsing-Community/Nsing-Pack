@@ -1,0 +1,261 @@
+// N32G41x utility macros
+//
+// ========== [请确认] 以下寄存器地址/位/值请对照N32G412数据手册核对，若有差异请修改 ==========
+//
+// --- RCC (复位和时钟控制) ---
+//   RCC_CTRL基地址:     0x40021000
+//   HSIEN使能位:        bit0, 写1使能
+//   HSIRDF就绪位:       bit1, 读1表示HSI就绪
+//
+// --- FLASH控制器 (基地址 0x40022000) ---
+//   FLASH_AC:           0x40022000  (flash访问控制)
+//   FLASH_KEY:          0x40022004  (解锁密钥)
+//   FLASH_OPTKEY:       0x40022008  (选项字节解锁密钥)
+//   FLASH_STS:          0x4002200C  (状态, BUSY=bit0)
+//   FLASH_CTRL:         0x40022010  (控制, LOCK=bit7, OPTWE=bit9)
+//   FLASH_OB:           0x4002201C  (选项字节状态, RDPRT1=bit1)
+//   FLASH解锁密钥1:     0x45670123
+//   FLASH解锁密钥2:     0xCDEF89AB
+//   FLASH操作命令:      0x220(OPTER), 0x260(OPTER+START), 0x210(OPTPG), 0x2000(清除)
+//
+// --- 选项字节物理地址 ---
+//   RDP(L1)选项字节:    0x1FFFF600
+//   RDP2(L2)选项字节:   0x1FFFF628
+//
+// --- CoreSight DBG (Cortex-M4标准) ---
+//   DBG_CTL:            0xE0042004  (通常无需修改)
+//
+// ==============================================================================
+
+execConfigureTraceETM()
+{
+    __var data;
+
+    data = __readMemory32(0xE0042004, "Memory");
+
+    data &= ~0xE0;
+  
+    if ( __getTracePortSize() == 1 )
+    {
+        data |= 0x60; // bit 7,6,5  TRACE_MODE=01 TRACE_IOEN=1
+    } 
+    else
+    if ( __getTracePortSize() == 2 )
+    {
+        data |= 0xA0; // bit 7,6,5  TRACE_MODE=10 TRACE_IOEN=1
+    } 
+    else   
+    {
+        data |= 0xE0; // bit 7,6,5  TRACE_MODE=11 TRACE_IOEN=1
+    }
+    
+    __writeMemory32(data, 0xE0042004, "Memory");
+}
+
+execConfigureTraceSWO()
+{
+  __var value;
+  
+  value = __readMemory32(0xE0042004, "Memory");
+  value &= ~0xE0;
+  value |= 0x20;  // bit 7,6,5  TRACE_MODE=00 TRACE_IOEN=1
+  __writeMemory32(value, 0xE0042004, "Memory");
+
+}
+
+_ExecDeviceExecutionStarted()
+{
+    if (__driverType("jet"))
+    {  
+         __var dbg_ctl;
+
+        dbg_ctl = __readMemory32(0xE0042004, "Memory");  // CoreSight DBG_CTL, Cortex-M4标准地址
+
+        if ((dbg_ctl & 0x7) != 0x7)  // DBG_CTL bit0-2 调试使能
+        {
+      
+            dbg_ctl |= 7; 
+      
+//            __writeMemory32(dbg_ctl, 0xE0042004, "Memory");
+            __message "DBG_CTL standby stop sleep-mode in debugging";
+        }
+    }
+}
+
+Flash_unlock()
+{
+    __var rcc_ctrl;
+	rcc_ctrl = __readMemory32(0x40021000,"Memory");  // RCC_CTRL基地址
+	rcc_ctrl |= 1;                                   // HSIEN=bit0
+    __writeMemory32(rcc_ctrl, 0x40021000, "Memory");
+	while((0x2 & __readMemory32(0x40021000,"Memory")) != 0x2)  // HSIRDF=bit1
+	{}
+	
+	if(0x80 & __readMemory32(0x40022010,"Memory"))   //  FLASH_CTRL LOCK=bit7
+    {
+        __message "Unlock flash";
+    
+        __writeMemory32(0x45670123, 0x40022004, "Memory"); // FLASH_KEY 密钥1
+        __writeMemory32(0xCDEF89AB, 0x40022004, "Memory"); // FLASH_KEY 密钥2
+        __writeMemory32(0xFFFFFFF8 & __readMemory32(0x40022000,"Memory"), 0x40022000, "Memory");  //  FLASH_AC
+
+    }
+    else
+    {
+        __message "FLASH have been unlocked";
+    }
+
+}
+
+
+Flash_lock()
+{
+  
+    if(!(0x80 & __readMemory32(0x40022010,"Memory")))  //  FLASH_CTRL LOCK=bit7
+    {
+        __message "Lock flash";
+    
+        __var ctl;
+        ctl = __readMemory32(0x40022010,"Memory");     // FLASH_CTRL
+        __writeMemory32(ctl | 0x80, 0x40022010, "Memory"); 
+  
+    }
+    else
+    {
+        __message "Flash have been locked";
+    }
+
+}
+
+Enable_set_OptionBytes()
+{
+
+    if(!(0x200 & __readMemory32(0x40022010,"Memory")))  //  FLASH_CTRL OPTWE=bit9
+    {
+  
+        Flash_unlock();
+  
+        __writeMemory32(0x45670123, 0x40022008, "Memory"); //  FLASH_OPTKEY 密钥1
+        __writeMemory32(0xCDEF89AB, 0x40022008, "Memory"); //  FLASH_OPTKEY 密钥2
+    
+    
+        __message "Enable Option bytes";
+  
+    }
+
+}
+
+
+Enable_readProtection()
+{
+    if ((0x2 & __readMemory32(0x4002201C,"Memory")) == 0)  //  FLASH_OB RDPRT1=bit1
+    {
+  
+        Enable_set_OptionBytes();
+    
+        __message "Set readout protection";
+    
+        __writeMemory32(0x00000220, 0x40022010, "Memory");  //  OPTER命令
+        __writeMemory32(0x00000260, 0x40022010, "Memory");  //  OPTER+START
+    
+        while(0x1 & __readMemory32(0x4002200C,"Memory"));   //  FLASH_STS BUSY=bit0
+    
+        __writeMemory32(0x00000210, 0x40022010, "Memory");  //  OPTPG命令
+        __writeMemory16(0xFF00, 0x1FFFF600, "Memory");      //  RDP选项字节地址
+    
+        while(0x1 & __readMemory32(0x4002200C,"Memory")); 
+    
+        __writeMemory32(0x00002000, 0x40022010, "Memory");  //  清除OPTPG/OPTER
+    
+        __hwReset(0);
+  
+    }
+    else
+    {
+        __message "Readout protection have been set";
+    }
+  
+}
+
+
+Disable_readProtection()
+{
+
+    if ((0x2 & __readMemory32(0x4002201C,"Memory")) != 0)  //  FLASH_OB RDPRT1=bit1
+    {
+  
+        __message "Reset readout protection";
+    
+        __writeMemory32(0x00000220, 0x40022010, "Memory");  //  OPTER命令
+        __writeMemory32(0x00000260, 0x40022010, "Memory");  //  OPTER+START
+    
+        while(0x1 & __readMemory32(0x4002200C,"Memory"));   //  FLASH_STS BUSY=bit0
+    
+        __writeMemory32(0x00000210, 0x40022010, "Memory");  //  OPTPG命令
+        __writeMemory16(0x5AA5, 0x1FFFF600, "Memory");      //  RDP选项字节地址, 0x5AA5=解除保护
+    
+        while(0x1 & __readMemory32(0x4002200C,"Memory"))
+        {
+    
+            __delay(100);
+    
+        }
+    
+        __writeMemory32(0x00002000, 0x40022010, "Memory");  //  清除OPTPG/OPTER
+    
+        __hwReset(0);
+  
+    }
+    else
+    {
+        __message "Readout protection have been reset";
+    }
+  
+}
+
+
+Enable_readProtectionL2()
+{
+    if ((0x2 & __readMemory32(0x4002201C,"Memory")) == 0)  // FLASH_OB RDPRT1=bit1
+    {
+  
+        Enable_set_OptionBytes();
+    
+        __message "Set readout protection L2";
+    
+        __writeMemory32(0x00000220, 0x40022010, "Memory");  //  OPTER命令
+        __writeMemory32(0x00000260, 0x40022010, "Memory");  //  OPTER+START
+    
+        while(0x1 & __readMemory32(0x4002200C,"Memory"));   //  FLASH_STS BUSY=bit0
+    
+        __writeMemory32(0x00000210, 0x40022010, "Memory");  //  OPTPG命令
+        __writeMemory16(0x33CC, 0x1FFFF628, "Memory");      //  L2选项字节地址, 0x33CC=RDP2值
+    
+        while(0x1 & __readMemory32(0x4002200C,"Memory")); 
+    
+        __writeMemory32(0x00002000, 0x40022010, "Memory");  //  清除OPTPG/OPTER
+    
+        __hwReset(0);
+  
+    }
+    else
+    {
+        __message "Readout protection L2 have been set";
+    }
+  
+}
+
+
+getPersistentMacros()   
+{
+    __message "getPersistentMacros";
+    __var macros;
+  
+    macros = "Flash_unlock()";
+    macros += ";Flash_lock()";
+    macros += ";Disable_readProtection()";
+    macros += ";Enable_readProtection()";
+    macros += ";Enable_set_OptionBytes()";
+  
+    return macros;
+}

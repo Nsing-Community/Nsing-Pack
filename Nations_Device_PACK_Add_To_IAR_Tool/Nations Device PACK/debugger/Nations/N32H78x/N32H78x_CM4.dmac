@@ -1,0 +1,9 @@
+
+enable_m4()
+{
+	__var v;
+    //release M4
+    __message "N32H78x AP0 release M4";
+    __writeMemory32(0x01,0x58030174, "AP0_Memory");
+    __delay(10);
+}

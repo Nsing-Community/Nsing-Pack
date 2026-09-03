@@ -1,0 +1,94 @@
+﻿-基于JLink_V640测试
+
+V1.0.7 
+整合N32G45X、N32G4FR、N32WB452、N32G43X、N32L43X、N32L40X、N32G032、N32G031、N32G030、N32G430系列资料，后续统一管理
+
+V1.0.9 
+增加N32G435T8Q7
+
+V1.0.10
+文档内容校对及格式调整
+
+V1.0.11
+增加N32A455系列
+
+V1.0.12
+增加N32G003、N32G401、N32G401F8S7_1系列
+
+V1.0.13
+增加N32A032、N32A430系列;优化N32G43X、N32L43X、N32L40X下载算法
+
+V1.0.14
+增加N32G451、N32G401系列、N32L402、N32G003F4系列
+
+V1.1.0
+增加N32G05X系列、N32H47X/48X系列、N32L402RD型号、N32G032F8型号
+
+V1.2.0
+增加N32H7XX 系列、添加新版本jlink使用注意点
+
+V1.3.0
+增加N32H76x和N32H78x系列的.jflash文件
+增加N32G033系列
+
+V1.4.0
+增加N32H480、N32H488型号，优化N32H473、N32H474、N32H482、N32H487型号
+删除Nations下的N32G033系列，新增Nsing下的N32G033系列
+优化N32G455型号
+
+V1.5.0
+删除N32G055系列、新增N32H49X系列、新增N32H73X系列
+
+V1.6.0
+新增N32A052系列，新增N32A003系列，优化N32G003系列，优化N32G45x系列，优化N32G4FR系列，优化N32WB452系列，优化N32A455系列
+
+V1.7.0
+新增N32MC47x、N32DP47x、N32G41x、N32WB031、N32WB033系列，修改N32H49x、N32G430、N32G401系列，新增N32H76x，N32H78x系列的4M FLASH的设备型号
+
+-----------------------------------------------------------------------------------------------------------
+-Based on JLink_V640 test
+
+V1.0.7 
+Merge and organize N32G45X、N32G4FR、N32WB452、N32G43X、N32L43X、N32L40X、N32G032、N32G031、N32G030、N32G430 series, unified management later
+
+V1.0.9 
+add  N32G435T8Q7
+
+V1.0.10
+document content proofreading，format adjustment
+
+V1.0.11
+add N32A455 series
+
+V1.0.12
+add N32G003\N32G401\N32G401F8S7_1 series
+
+V1.0.13
+add N32A032\N32A430 series;Optimized N32G43X\N32L43X\N32L40X series download algorithm
+
+V1.0.14
+add N32G451,N32G401, N32L402, N32G003F4 series
+
+V1.1.0
+add N32G05X series, N32H47X/48X series，N32L402RD， N32G032F8
+
+V1.2.0
+add N32H7XX series, add the new version of jlink use note
+
+V1.3.0
+Add the .jflash file for the N32H76x and N32H78x series
+add N32G033 series
+
+V1.4.0
+Add N32H480 and N32H488 models, optimize N32H473, N32H474, N32H482, and N32H487 models
+Delete the N32G033 series under Nations and add the N32G033 series under Nsing
+Optimize N32G455 models
+
+V1.5.0
+Delete the N32G055 series, add N32H49X series
+
+V1.6.0
+Add N32A052 series，add N32A003 series ，optimize N32G003 series ，optimizes N32G45x series ，optimizes N32G4FR series ，optimizes N32WB452 series ，optimizes N32A455 series
+
+V1.7.0
+Add N32MC47x, N32DP47x, N32G41x, N32WB031, N32WB033 series, modify N32H49x, N32G430, N32G401 series，Add 4M FLASH device models of N32H76x and N32H78x series

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_board>
+  <pass>
+    <loader>$TOOLKIT_DIR$\config\flashloader\Nations\N32H76x\N32H76x_4096.flash</loader>
+    <range>CODE 0x15000000 0x153DFFFF</range>
+  </pass>
+</flash_board>
+
+

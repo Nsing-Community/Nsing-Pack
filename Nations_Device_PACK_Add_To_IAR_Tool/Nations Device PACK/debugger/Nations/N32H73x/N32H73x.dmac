@@ -1,0 +1,58 @@
+__param enable_reset_peripheral = 0;
+
+_ExecDevicePreReset()
+{
+    if(enable_reset_peripheral==1)
+    {
+        __message "N32H7xx reset_peripheral by RCC";
+
+		__writeMemory32( 0x30710001,0x58030064,"AP0_Memory"); // reset AHB1 periph1
+		__writeMemory32( 0x00000001,0x58030068,"AP0_Memory"); // reset AHB1 periph2
+		__writeMemory32( 0x01010101,0x5803006c,"AP0_Memory"); // reset AHB1 periph3
+		__writeMemory32( 0x00000101,0x58030070,"AP0_Memory"); // reset AHB1 periph4
+		__writeMemory32( 0x11111111,0x58030094,"AP0_Memory"); // reset APB1 periph1
+		__writeMemory32( 0x11111111,0x58030098,"AP0_Memory"); // reset APB1 periph2
+		__writeMemory32( 0x11111111,0x5803009c,"AP0_Memory"); // reset APB1 periph3
+		__writeMemory32( 0x11111111,0x580300a0,"AP0_Memory"); // reset APB1 periph4
+		__writeMemory32( 0x11111111,0x580300a4,"AP0_Memory"); // reset APB1 periph5
+		__writeMemory32( 0x03710101,0x580300b4,"AP0_Memory"); // reset AHB2 periph1//ECCMON2/SDPU不复位
+		__writeMemory32( 0x11111111,0x580300d4,"AP0_Memory"); // reset APB2 periph1
+		__writeMemory32( 0x11111111,0x580300d8,"AP0_Memory"); // reset APB2 periph2
+		__writeMemory32( 0x11111111,0x580300dc,"AP0_Memory"); // reset APB2 periph3
+		__writeMemory32( 0x11111100,0x580300e0,"AP0_Memory"); // reset APB2 periph4
+		__writeMemory32( 0x11111111,0x580300ec,"AP0_Memory"); // reset AHB5 periph1
+		__writeMemory32( 0x11101110,0x580300f0,"AP0_Memory"); // reset AHB5 periph2//ECCMON3不复位  AFIO不能复位,flash需要
+
+		__writeMemory32( 0x11111111,0x58030104,"AP0_Memory"); // reset APB5 periph1
+		__writeMemory32( 0x11111100,0x58030108,"AP0_Memory"); // reset APB5 periph2
+		__writeMemory32( 0x11111100,0x58030150,"AP0_Memory"); // reset AXI periph1//ECCMON1 /OTP不复位
+		__writeMemory32( 0x31010101,0x58030154,"AP0_Memory"); // reset AXI periph2
+		__writeMemory32( 0x00000001,0x58030158,"AP0_Memory"); // reset AXI periph3
+		__writeMemory32( 0x01310000,0x5803015C,"AP0_Memory"); // reset AXI periph4  XSPI1不复位
+
+		__writeMemory32( 0x00000000,0x58030064,"AP0_Memory"); // reset AHB1 periph1
+		__writeMemory32( 0x00000000,0x58030068,"AP0_Memory"); // reset AHB1 periph2
+		__writeMemory32( 0x00000000,0x5803006c,"AP0_Memory"); // reset AHB1 periph3
+		__writeMemory32( 0x00000000,0x58030070,"AP0_Memory"); // reset AHB1 periph4
+		__writeMemory32( 0x00000000,0x58030094,"AP0_Memory"); // reset APB1 periph1
+		__writeMemory32( 0x00000000,0x58030098,"AP0_Memory"); // reset APB1 periph2
+		__writeMemory32( 0x00000000,0x5803009c,"AP0_Memory"); // reset APB1 periph3
+		__writeMemory32( 0x00000000,0x580300a0,"AP0_Memory"); // reset APB1 periph4
+		__writeMemory32( 0x00000000,0x580300a4,"AP0_Memory"); // reset APB1 periph5
+		__writeMemory32( 0x00000000,0x580300b4,"AP0_Memory"); // reset AHB2 periph1//ECCMON2/SDPU不复位
+		__writeMemory32( 0x00000000,0x580300d4,"AP0_Memory"); // reset APB2 periph1
+		__writeMemory32( 0x00000000,0x580300d8,"AP0_Memory"); // reset APB2 periph2
+		__writeMemory32( 0x00000000,0x580300dc,"AP0_Memory"); // reset APB2 periph3
+		__writeMemory32( 0x00000000,0x580300e0,"AP0_Memory"); // reset APB2 periph4
+		__writeMemory32( 0x00000000,0x580300ec,"AP0_Memory"); // reset AHB5 periph1
+		__writeMemory32( 0x00000000,0x580300f0,"AP0_Memory"); // reset AHB5 periph2//ECCMON3不复位  AFIO不能复位,flash需要
+		__writeMemory32( 0x00000000,0x58030104,"AP0_Memory"); // reset APB5 periph1
+		__writeMemory32( 0x00000000,0x58030108,"AP0_Memory"); // reset APB5 periph2
+		__writeMemory32( 0x00000000,0x58030150,"AP0_Memory"); // reset AXI periph1
+		__writeMemory32( 0x00000000,0x58030154,"AP0_Memory"); // reset AXI periph2
+		__writeMemory32( 0x00000000,0x58030158,"AP0_Memory"); // reset AXI periph3
+		__writeMemory32( 0x00000000,0x5803015C,"AP0_Memory"); // reset AXI periph4 
+		__delay(10);
+    }
+
+}
